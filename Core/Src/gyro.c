@@ -103,6 +103,9 @@
 
 #elif defined(STM32F205RET7)
 #include "stm32f2xx_hal.h"
+#include "usart.h"
+#include "gpio.h"
+#include "i2c.h"
 
 #endif
 
@@ -259,6 +262,9 @@ static int32_t platform_write(void *handle, uint8_t reg, const uint8_t *bufp,
 #elif defined(SPC584B_DIS)
   i2c_lld_write(handle,  ISM330DHCX_I2C_ADD_H & 0xFE, reg,
                (uint8_t*) bufp, len);
+#elif defined(STM32F205RET7)
+  HAL_I2C_Mem_Write(handle, ISM330DHCX_I2C_ADD_H, reg,
+                      I2C_MEMADD_SIZE_8BIT, (uint8_t*) bufp, len, 1000);
 #endif
   return 0;
 }
@@ -287,6 +293,9 @@ static int32_t platform_read(void *handle, uint8_t reg, uint8_t *bufp,
   HAL_GPIO_WritePin(CS_up_GPIO_Port, CS_up_Pin, GPIO_PIN_SET);
 #elif defined(SPC584B_DIS)
   i2c_lld_read(handle, ISM330DHCX_I2C_ADD_H & 0xFE, reg, bufp, len);
+#elif defined(STM32F205RET7)
+  HAL_I2C_Mem_Read(handle, ISM330DHCX_I2C_ADD_H, reg,
+                     I2C_MEMADD_SIZE_8BIT, bufp, len, 1000);
 #endif
   return 0;
 }
@@ -306,6 +315,8 @@ static void tx_com(uint8_t *tx_buffer, uint16_t len)
   CDC_Transmit_FS(tx_buffer, len);
 #elif defined(SPC584B_DIS)
   sd_lld_write(&SD2, tx_buffer, len);
+#elif defined(STM32F205RET7)
+  HAL_UART_Transmit(&huart2, tx_buffer, len, 1000);
 #endif
 }
 
@@ -317,7 +328,7 @@ static void tx_com(uint8_t *tx_buffer, uint16_t len)
  */
 static void platform_delay(uint32_t ms)
 {
-#if defined(NUCLEO_F401RE) | defined(STEVAL_MKI109V3)
+#if defined(NUCLEO_F401RE) | defined(STEVAL_MKI109V3) | defined(STM32F205RET7)
   HAL_Delay(ms);
 #elif defined(SPC584B_DIS)
   osalThreadDelayMilliseconds(ms);
