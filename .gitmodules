@@ -1,0 +1,3 @@
+[submodule "ism330dhcx-pid"]
+	path = ism330dhcx-pid
+	url = https://github.com/STMicroelectronics/ism330dhcx-pid
