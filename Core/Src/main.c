@@ -154,7 +154,7 @@ void SystemClock_Config(void)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   if(GPIO_Pin == Renca_pin || GPIO_Pin == Lenca_pin) {
-    update_encoder(GPIO_pin);
+    update_encoder(GPIO_Pin);
   }
 }
 

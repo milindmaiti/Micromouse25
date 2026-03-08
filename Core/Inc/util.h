@@ -8,11 +8,11 @@
 #ifndef INC_UTIL_H_
 #define INC_UTIL_H_
 
-const int Lenca_pin = 10;
-const int Lencb_pin = 9;
+extern const int Lenca_pin;
+extern const int Lencb_pin;
 
-const int Renca_pin = 12;
-const int Rencb_pin = 11;
+extern const int Renca_pin;
+extern const int Rencb_pin;
 
 
 

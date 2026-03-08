@@ -1,0 +1,4 @@
+../Core/Src/encoder.c:9:6:encoder_reset	4	static
+../Core/Src/encoder.c:14:6:update_encoder	16	static
+../Core/Src/encoder.c:30:5:get_encoder_right	4	static
+../Core/Src/encoder.c:33:5:get_encoder_left	4	static

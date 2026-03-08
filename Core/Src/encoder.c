@@ -1,4 +1,7 @@
 #include "encoder.h"
+#include "util.h"
+#include "stm32f2xx_hal.h"
+#include <stdint.h>
 
 volatile int Rencoder_count;
 volatile int Lencoder_count;
@@ -9,7 +12,7 @@ void encoder_reset() {
 }
 
 void update_encoder(uint32_t pin){
-	if(HAL_GPIO_READ(pin)){
+	if(HAL_GPIO_ReadPin(GPIOA, pin)){
 		if(pin == Renca_pin)
 		Rencoder_count++;
 		else

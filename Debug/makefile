@@ -58,34 +58,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := NURCMicromouse
+BUILD_ARTIFACT_NAME := Micromouse25
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-NURCMicromouse.elf \
+Micromouse25.elf \
 
 MAP_FILES += \
-NURCMicromouse.map \
+Micromouse25.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-NURCMicromouse.list \
+Micromouse25.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: NURCMicromouse.elf secondary-outputs
+main-build: Micromouse25.elf secondary-outputs
 
 # Tool invocations
-NURCMicromouse.elf NURCMicromouse.map: $(OBJS) $(USER_OBJS) /Users/mmaiti/STM32CubeIDE/workspace_1.19.0/NURCMicromouse/STM32F205RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "NURCMicromouse.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/Users/mmaiti/STM32CubeIDE/workspace_1.19.0/NURCMicromouse/STM32F205RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NURCMicromouse.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Micromouse25.elf Micromouse25.map: $(OBJS) $(USER_OBJS) /Users/mmaiti/STM32CubeIDE/workspace_1.19.0/Micromouse25/STM32F205RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "Micromouse25.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/Users/mmaiti/STM32CubeIDE/workspace_1.19.0/Micromouse25/STM32F205RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Micromouse25.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -94,14 +94,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-NURCMicromouse.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "NURCMicromouse.list"
+Micromouse25.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Micromouse25.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) NURCMicromouse.elf NURCMicromouse.list NURCMicromouse.map default.size.stdout
+	-$(RM) Micromouse25.elf Micromouse25.list Micromouse25.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
