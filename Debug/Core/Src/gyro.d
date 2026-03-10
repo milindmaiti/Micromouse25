@@ -30,7 +30,7 @@ Core/Src/gyro.o: ../Core/Src/gyro.c ../ism330dhcx-pid/ism330dhcx_reg.h \
  ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal_tim_ex.h \
  ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal_uart.h \
  ../Core/Inc/usart.h ../Core/Inc/main.h ../Core/Inc/gpio.h \
- ../Core/Inc/i2c.h
+ ../Core/Inc/gyro.h ../Core/Inc/i2c.h
 ../ism330dhcx-pid/ism330dhcx_reg.h:
 ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal.h:
 ../Core/Inc/stm32f2xx_hal_conf.h:
@@ -65,4 +65,5 @@ Core/Src/gyro.o: ../Core/Src/gyro.c ../ism330dhcx-pid/ism330dhcx_reg.h \
 ../Core/Inc/usart.h:
 ../Core/Inc/main.h:
 ../Core/Inc/gpio.h:
+../Core/Inc/gyro.h:
 ../Core/Inc/i2c.h:

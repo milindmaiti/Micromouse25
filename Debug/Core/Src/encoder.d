@@ -1,5 +1,6 @@
 Core/Src/encoder.o: ../Core/Src/encoder.c ../Core/Inc/encoder.h \
- ../Core/Inc/util.h ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal.h \
+ ../Core/Inc/util.h ../ism330dhcx-pid/ism330dhcx_reg.h \
+ ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal.h \
  ../Core/Inc/stm32f2xx_hal_conf.h \
  ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal_rcc.h \
  ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal_def.h \
@@ -31,6 +32,7 @@ Core/Src/encoder.o: ../Core/Src/encoder.c ../Core/Inc/encoder.h \
  ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal_uart.h
 ../Core/Inc/encoder.h:
 ../Core/Inc/util.h:
+../ism330dhcx-pid/ism330dhcx_reg.h:
 ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal.h:
 ../Core/Inc/stm32f2xx_hal_conf.h:
 ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal_rcc.h:

@@ -8,11 +8,14 @@
 #ifndef INC_UTIL_H_
 #define INC_UTIL_H_
 
+#include "ism330dhcx_reg.h"
+
 extern const int Lenca_pin;
 extern const int Lencb_pin;
 
 extern const int Renca_pin;
 extern const int Rencb_pin;
+
 
 
 

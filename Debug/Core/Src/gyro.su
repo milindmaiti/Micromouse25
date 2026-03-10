@@ -1,6 +1,6 @@
-../Core/Src/gyro.c:45:6:ism330dhcx_read_data_polling	72	static
-../Core/Src/gyro.c:152:16:platform_write	40	static
-../Core/Src/gyro.c:170:16:platform_read	40	static
-../Core/Src/gyro.c:185:13:tx_com	16	static
-../Core/Src/gyro.c:196:13:platform_delay	16	static
-../Core/Src/gyro.c:204:13:platform_init	4	static
+../Core/Src/gyro.c:46:6:ism330dhcx_init	8	static
+../Core/Src/gyro.c:86:6:ism330dhcx_read_data	56	static
+../Core/Src/gyro.c:137:16:platform_write	40	static
+../Core/Src/gyro.c:155:16:platform_read	40	static
+../Core/Src/gyro.c:170:13:tx_com	16	static
+../Core/Src/gyro.c:181:13:platform_delay	16	static
