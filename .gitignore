@@ -1,0 +1,8 @@
+Debug/
+*.bak
+*.elf
+*.list
+*.map
+.settings/
+.project
+.cproject
